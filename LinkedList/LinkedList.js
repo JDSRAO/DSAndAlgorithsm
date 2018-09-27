@@ -38,6 +38,36 @@ LinkedList.prototype.Print = function () {
     console.log(output);
 };
 
+LinkedList.prototype.AddToTail = function (value) {
+    let newNode = new Node(value, null, this.tail);
+    if(this.tail) {
+        this.tail.next = newNode;
+    }
+    else {
+        this.head = newNode;
+    }
+    this.tail = newNode;
+};
+
+LinkedList.prototype.RemoveHead = function () {
+    if(!this.head) {
+        return null;
+    }
+    else {
+        let nodeToDelete = this.head;
+        let value = nodeToDelete.value;
+        let nextNode = this.head.next;
+        this.head = nextNode;
+        if(this.head) {
+            this.head.prev = null;
+        }
+        else {
+            this.tail = null;
+        }
+        return value;
+    }
+};
+
 module.exports = 
 {
     LinkedList : LinkedList,
