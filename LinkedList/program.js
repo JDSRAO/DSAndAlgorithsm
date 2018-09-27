@@ -14,5 +14,11 @@ ll1.AddToHead(-100);
 ll1.Print();
 ll1.RemoveHead();
 ll1.Print();
+ll1.RemoveTail();
+ll1.Print();
 
+let itemToFind = -3;
+console.log(ll1.Search(itemToFind));
+
+console.log(`Index of ${itemToFind} in ${ll1.indexOf(itemToFind)}`);
 //console.log(ll1);

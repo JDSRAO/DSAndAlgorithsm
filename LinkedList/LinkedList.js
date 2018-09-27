@@ -16,12 +16,12 @@ LinkedList.prototype.AddToHead = function (value) {
     if(!this.head) {
       this.head = new Node(value,null,null);
       this.tail = this.head;
-      this.count++;
     }
     else {
         let newNode = new Node(value, this.head, null);
         this.head = newNode;
     }  
+    this.count++;
   };
 
 LinkedList.prototype.Print = function () {
@@ -46,6 +46,7 @@ LinkedList.prototype.AddToTail = function (value) {
     else {
         this.head = newNode;
     }
+    this.count++;
     this.tail = newNode;
 };
 
@@ -54,6 +55,7 @@ LinkedList.prototype.RemoveHead = function () {
         return null;
     }
     else {
+        this.count--;
         let nodeToDelete = this.head;
         let value = nodeToDelete.value;
         let nextNode = this.head.next;
@@ -66,6 +68,49 @@ LinkedList.prototype.RemoveHead = function () {
         }
         return value;
     }
+};
+
+LinkedList.prototype.RemoveTail = function () {
+    if(!this.tail) {
+        return null;
+    }
+    else {
+        this.count--;
+        let value = this.tail.value;
+        let prevNode = this.tail.prev;
+        this.tail = prevNode;
+        if(this.tail) {
+            this.tail.next = null;
+        }
+        else {
+            this.head = null;
+        }
+        return value;
+    }
+};
+
+LinkedList.prototype.Search = function (value) {
+    let node = this.head;
+    while(node) {
+        if(value === node.value) {
+            return true;
+        }
+        node = node.next;
+    }
+    return false;
+};
+
+LinkedList.prototype.indexOf = function (value) {
+    let node = this.head;
+    let index = 0;
+    while (node) {
+        if(node.value === value) {
+            return index;
+        }
+        index++;
+        node = node.next;
+    }
+    return -1;
 };
 
 module.exports = 
