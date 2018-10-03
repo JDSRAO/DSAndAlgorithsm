@@ -52,6 +52,33 @@ BST.prototype.BreadthFirstTraversal = function (fn) {
     }
 };
 
+BST.prototype.GetMinValue = function () {
+    return getMinValue(this.root);
+};
+
+BST.prototype.GetMaxValue = function () {
+    return getMaxValue(this.root);
+};
+
+let getMaxValue = function (node) {
+    if(node.right) {
+        return getMaxValue(node.right);
+    }
+    else {
+        return node.value;
+    }
+};
+
+let getMinValue = function (node) {
+    if(node.left) {
+       return getMinValue(node.left);
+    }
+    else {
+        return node.value;
+    }
+    
+};
+
 let depthFirstTraversal = function (rootNode, fn) {
     let queue = [];
     queue.push(rootNode);

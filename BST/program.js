@@ -27,4 +27,9 @@ myBst.DeapthFirstTraversal(logValue, bst.BST.Order.InOrder);
 console.log('Breadth first traversal');
 myBst.BreadthFirstTraversal(logValue);
 
+console.log('Min value');
+console.log(myBst.GetMinValue());
+console.log('Max value');
+console.log(myBst.GetMaxValue());
+
 console.log(JSON.stringify(myBst), undefined, '\n');
