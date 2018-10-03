@@ -44,18 +44,17 @@ BST.prototype.DeapthFirstTraversal = function (fn, order) {
 };
 
 let deapthFirstTraversal = function(node, userFunction, order) {
-    console.log(order);
     if(order === BST.Order.PreOrder ) {
         userFunction(node.value);
     }
     if(node.left) {
-        deapthFirstTraversal(node.left, userFunction);
+        deapthFirstTraversal(node.left, userFunction, order);
     }
     if(order === BST.Order.InOrder) {
         userFunction(node.value);
     }
     if(node.right) {
-        deapthFirstTraversal(node.right, userFunction);
+        deapthFirstTraversal(node.right, userFunction, order);
     }
     if(order === BST.Order.PostOrder) {
         userFunction(node.value);
