@@ -43,6 +43,30 @@ BST.prototype.DeapthFirstTraversal = function (fn, order) {
     }
 };
 
+BST.prototype.BreadthFirstTraversal = function (fn) {
+    if(typeof fn === 'function') {
+        depthFirstTraversal(this.root, fn)
+    }
+    else {
+        throw `${fn} is not a function`;
+    }
+};
+
+let depthFirstTraversal = function (rootNode, fn) {
+    let queue = [];
+    queue.push(rootNode);
+    while(queue.length != 0) {
+        let currentNode = queue.shift();
+        fn(currentNode.value);
+        if(currentNode.left) {
+            queue.push(currentNode.left);
+        }
+        if(currentNode.right) {
+            queue.push(currentNode.right);
+        }
+    }
+};
+
 let deapthFirstTraversal = function(node, userFunction, order) {
     if(order === BST.Order.PreOrder ) {
         userFunction(node.value);

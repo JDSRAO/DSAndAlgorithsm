@@ -24,5 +24,7 @@ console.log('Pre Order');
 myBst.DeapthFirstTraversal(logValue, bst.BST.Order.PreOrder);
 console.log('In Order');
 myBst.DeapthFirstTraversal(logValue, bst.BST.Order.InOrder);
+console.log('Breadth first traversal');
+myBst.BreadthFirstTraversal(logValue);
 
 console.log(JSON.stringify(myBst), undefined, '\n');
