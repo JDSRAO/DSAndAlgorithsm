@@ -4,6 +4,8 @@ function BST() {
     this.root = null;
 }
 
+BST.Order = {'PreOrder' : 1, 'PostOrder' : 2, 'InOrder'  : 3};
+
 function Node(value, left, right) {
     this.value = value;
     this.left = left || null;
@@ -25,6 +27,38 @@ BST.prototype.Contains = function (value) {
     }
     else {
        return contains(value, this.root);
+    }
+};
+
+/*
+Depth first traversal with configuranle order algorithm (InOrder, PreOrder, PostOrder)
+*/
+
+BST.prototype.DeapthFirstTraversal = function (fn, order) {
+    if(typeof fn === 'function') {
+        deapthFirstTraversal(this.root, fn, order);
+    }
+    else {
+        throw `${fn} is not a function`;
+    }
+};
+
+let deapthFirstTraversal = function(node, userFunction, order) {
+    console.log(order);
+    if(order === BST.Order.PreOrder ) {
+        userFunction(node.value);
+    }
+    if(node.left) {
+        deapthFirstTraversal(node.left, userFunction);
+    }
+    if(order === BST.Order.InOrder) {
+        userFunction(node.value);
+    }
+    if(node.right) {
+        deapthFirstTraversal(node.right, userFunction);
+    }
+    if(order === BST.Order.PostOrder) {
+        userFunction(node.value);
     }
 };
 

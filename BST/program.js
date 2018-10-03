@@ -14,4 +14,10 @@ myBst.Add(4);
 console.log(`Does BST contains ${valueToSearch} : ${myBst.Contains(valueToSearch)}`);
 console.log(`Does BST contains ${valueToSearch + 60} : ${myBst.Contains(valueToSearch + 60)}`);
 
+let logValue = function(value) {
+    console.log(value)
+};
+console.log(bst.BST.Order);
+myBst.DeapthFirstTraversal(logValue, bst.BST.Order.InOrder);
+
 console.log(JSON.stringify(myBst), undefined, '\n');
