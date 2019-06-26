@@ -9,5 +9,5 @@ Data structures and algorithms implemented using javascript.
 
 
 
-### Lincense
+## Lincense
 Please refer [here](LICENSE) for license information
