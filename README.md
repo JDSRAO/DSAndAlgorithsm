@@ -10,4 +10,4 @@ Data structes and algorithms implemented using javascript.
 
 
 ### Lincense
-Please refer [here]() for license information
+Please refer [here](LICENSE) for license information
