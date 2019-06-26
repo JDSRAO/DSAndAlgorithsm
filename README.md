@@ -1,5 +1,5 @@
-# Data Structres And Algorithms
-Data structes and algorithms implemented using javascript.
+# Data Structures And Algorithms
+Data structures and algorithms implemented using javascript.
 
 
 #### Data structures implemented
